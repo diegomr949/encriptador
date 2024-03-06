@@ -33,7 +33,7 @@ function btnDesncriptar(){
     const textoEncriptado = desencriptar(textArea.value)
     mensaje.value = textoEncriptado
     textArea.value = ""
-   // mensaje.style.backgroundImage = "none"
+ 
 }
 
 function desencriptar(StringDesencriptado){
@@ -48,3 +48,10 @@ function desencriptar(StringDesencriptado){
     }
     return StringDesencriptado
 }
+
+document.querySelector('.copiar').addEventListener('click', function() {
+    mensaje.select();
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    alert('¡Texto copiado al portapapeles!');
+});
